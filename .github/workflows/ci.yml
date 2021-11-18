@@ -1,0 +1,105 @@
+name: App CI
+
+on:
+  push:
+    # Run on all branches
+    branches:
+      - "*"
+    # Run only if files modified are not docs
+    paths-ignore:
+      - "*.md"
+  pull_request:
+    # Run on all branches
+    branches:
+      - "*"
+    # Run only if files modified are not docs
+    paths-ignore:
+      - "*.md"
+
+env:
+  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+jobs:
+
+  # Build
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      # pnpm cache
+      - uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      # Install
+      - name: INSTALL
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.22.2
+          run_install: true
+
+      # Build
+      - name: BUILD
+        run: pnpm build
+
+      # Test
+      - name: TEST
+        run: pnpm test:ci
+
+      # Upload artifacts
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist/
+
+  # Deploy to gh pages
+  deploy:
+    name: Deploy
+    # Deploy only for main branch
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    # Manual deployment
+    # See https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/
+    environment:
+      name: pchmn.github.io/app
+      url: https://pchmn.github.io/app/
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      # ----------------------------------
+      #     Download dist artifacts
+      # ----------------------------------
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist/
+      # ----------------------------------
+      #     Download dist artifacts
+      # ----------------------------------
+
+      # Deploy dist folder to gh pages
+      - name: DEPLOY
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ env.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          user_name: ${{ secrets.GIT_AUTHOR_NAME }}
+          user_email: ${{ secrets.GIT_AUTHOR_EMAIL }}

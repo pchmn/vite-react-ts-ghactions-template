@@ -1,0 +1,64 @@
+{
+  "name": "vite-react-ts-template",
+  "version": "0.0.0",
+  "description": "Vite React Typescript Template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pchmn/vite-react-ts-template.git"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "template",
+    "eslint",
+    "prettier",
+    "testing-library"
+  ],
+  "author": "pchmn",
+  "license": "MIT",
+  "homepage": "https://github.com/pchmn/vite-react-ts-template",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "postbuild": "cp 404.html dist/",
+    "test": "jest",
+    "test:ci": "jest --coverage",
+    "serve": "vite preview",
+    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
+    "lint": "eslint --cache --fix ./src"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@commitlint/prompt-cli": "^13.2.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-react": "^1.0.4",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^4.12.4",
+    "husky": "^7.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.5",
+    "lint-staged": "^11.2.3",
+    "prettier": "2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.3.2",
+    "vite": "^2.6.13",
+    "vite-tsconfig-paths": "^3.3.17"
+  }
+}
