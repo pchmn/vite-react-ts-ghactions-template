@@ -5,7 +5,7 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest'
   },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx}'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx}', '!<rootDir>/src/main.tsx'],
   coverageDirectory: '<rootDir>/coverage/',
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '(.*).d.ts$'],
   moduleNameMapper: {

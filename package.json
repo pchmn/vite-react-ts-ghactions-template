@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "postbuild": "cp 404.html dist/",
+    "build:ci": "tsc && vite build && cp 404.html dist/",
     "test": "jest",
     "test:ci": "jest --coverage",
     "serve": "vite preview",

@@ -51,17 +51,45 @@ jobs:
 
       # Build
       - name: BUILD
-        run: pnpm build
+        run: pnpm build:ci
 
       # Test
       - name: TEST
-        run: pnpm test
+        run: pnpm test:ci
 
-      # Upload artifacts
+      # Upload dist artifacts
       - uses: actions/upload-artifact@v2
         with:
           name: dist
           path: dist/
+
+      # Upload coverage artifacts
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage/lcov.info
+
+  coverage:
+    name: Coverage analysis
+    needs: buildAndTest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ env.GITHUB_TOKEN }}
+
+      # Donwload coverage artifacts
+      - uses: actions/download-artifact@v2
+        with:
+          name: coverage
+
+      # Update coverage file to codecov
+      - name: CODECOV
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: lcov.info
 
   # Deploy to gh pages
   deploy:
