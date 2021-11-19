@@ -1,7 +1,7 @@
 <div align="center">
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pchmn/vite-react-ts-template/blob/main/license)
-[![ci](https://github.com/pchmn/vite-react-ts-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pchmn/vite-react-ts-template/blob/main/.github/workflows/ci.yml)
+[![ci](https://github.com/pchmn/vite-react-ts-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pchmn/vite-react-ts-template/actions)
 [![codecov.io](https://codecov.io/gh/pchmn/vite-react-ts-template/coverage.svg?branch=main)](https://codecov.io/gh/pchmn/vite-react-ts-template?branch=master)
 <!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-template&amp;utm_campaign=Badge_Grade) -->
 
