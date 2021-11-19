@@ -4,7 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/app/',
+  base: '/vite-react-ts-template/',
   plugins: [react(), tsconfigPaths()],
   build: {
     sourcemap: true
