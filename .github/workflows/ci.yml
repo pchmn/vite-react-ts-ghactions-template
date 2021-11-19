@@ -21,8 +21,8 @@ env:
 
 jobs:
 
-  # Build
-  build:
+  # Build & Test
+  buildAndTest:
     name: Build & Test
     runs-on: ubuntu-latest
     steps:
@@ -55,7 +55,7 @@ jobs:
 
       # Test
       - name: TEST
-        run: pnpm test:ci
+        run: pnpm test
 
       # Upload artifacts
       - uses: actions/upload-artifact@v2
@@ -68,7 +68,7 @@ jobs:
     name: Deploy
     # Deploy only for main branch
     if: github.ref == 'refs/heads/main'
-    needs: build
+    needs: buildAndTest
     runs-on: ubuntu-latest
     # Manual deployment
     # See https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/
@@ -84,16 +84,11 @@ jobs:
         with:
           node-version: "16"
 
-      # ----------------------------------
-      #     Download dist artifacts
-      # ----------------------------------
+      # Download dist artifacts
       - uses: actions/download-artifact@v2
         with:
           name: dist
           path: dist/
-      # ----------------------------------
-      #     Download dist artifacts
-      # ----------------------------------
 
       # Deploy dist folder to gh pages
       - name: DEPLOY
