@@ -1,7 +1,6 @@
 name: App CI
 
 on:
-  workflow_dispatch
   push:
     # Run on all branches
     branches:
