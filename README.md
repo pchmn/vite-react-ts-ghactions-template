@@ -1,12 +1,12 @@
 <div align="center">
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pchmn/vite-react-ts-template/blob/main/license)
-[![ci](https://github.com/pchmn/vite-react-ts-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pchmn/vite-react-ts-template/actions)
-[![codecov.io](https://codecov.io/gh/pchmn/vite-react-ts-template/coverage.svg?branch=main)](https://codecov.io/gh/pchmn/vite-react-ts-template?branch=master)
-<!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-template&amp;utm_campaign=Badge_Grade) -->
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/pchmn/vite-react-ts-ghactions-template/blob/main/license)
+[![ci](https://github.com/pchmn/vite-react-ts-ghactions-template/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pchmn/vite-react-ts-ghactions-template/actions)
+[![codecov.io](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template/coverage.svg?branch=main)](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template?branch=master)
+<!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-ghactions-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-ghactions-template&amp;utm_campaign=Badge_Grade) -->
 
 # React TS Template with Vite
-  
+
 This a React + TS + Vite + Github Actions starter template.
 
 </div>
@@ -40,7 +40,7 @@ This a React + TS + Vite + Github Actions starter template.
 ### Github Actions
 
 - Build, Test and coverage analysis (with Codecov) at each commit
-- Deploy to github pages on main branch (see deploy of this repo [here](https://pchmn.github.io/vite-react-ts-template/))
+- Deploy to github pages on main branch (see deploy of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
 
 
 ## Getting Started
@@ -55,7 +55,7 @@ npx degit pchmn/vite-react-ts-ghactions-template app_name
 
 If you want to use Github Actions in your repo, you'll need to make little configurations.
 
-Actual [workflow](https://github.com/pchmn/vite-react-ts-template/blob/main/.github/workflows/ci.yml) is:
+Actual [workflow](https://github.com/pchmn/vite-react-ts-ghactions-template/blob/main/.github/workflows/ci.yml) is:
 
 ![image](https://user-images.githubusercontent.com/12658241/142628675-1f9e9617-e5da-4dff-aa79-abc0883cf037.png)
 
