@@ -101,8 +101,8 @@ jobs:
     # Manual deployment
     # See https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/
     environment:
-      name: pchmn.github.io/vite-react-ts-template
-      url: https://pchmn.github.io/vite-react-ts-template/
+      name: pchmn.github.io/vite-react-ts-ghactions-template
+      url: https://pchmn.github.io/vite-react-ts-ghactions-template/
     steps:
       - uses: actions/checkout@v2
         with:
