@@ -5,9 +5,9 @@
 [![codecov.io](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template/coverage.svg?branch=main)](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template?branch=master)
 <!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-ghactions-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-ghactions-template&amp;utm_campaign=Badge_Grade) -->
 
-# React TS Template with Vite
+# React - TypeScript and Github Actions Template with Vite
 
-This a React + TS + Vite + Github Actions starter template.
+This a React + TypeScript + Github Actions starter template built with Vite.
 
 </div>
 
@@ -15,7 +15,7 @@ This a React + TS + Vite + Github Actions starter template.
 ### Overview
 
 - Vite
-- React - Typscript
+- React - TypeScript
 - pnpm
 - Gihtub Actions
 ### Editor Config
@@ -53,7 +53,7 @@ npx degit pchmn/vite-react-ts-ghactions-template app_name
 
 ### Configuration for Github Actions
 
-If you want to use Github Actions in your repo, you'll need to make little configurations.
+If you want to use Github Actions in your repo, you'll need to make little configuration.
 
 Actual [workflow](https://github.com/pchmn/vite-react-ts-ghactions-template/blob/main/.github/workflows/ci.yml) is:
 
