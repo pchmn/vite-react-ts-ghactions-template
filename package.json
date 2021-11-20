@@ -4,19 +4,18 @@
   "description": "Vite React Typescript Template",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pchmn/vite-react-ts-template.git"
+    "url": "git+https://github.com/pchmn/vite-react-ts-ghactions-template.git"
   },
   "keywords": [
     "react",
     "vite",
+    "typescript",
     "template",
-    "eslint",
-    "prettier",
-    "testing-library"
+    "ghactions"
   ],
   "author": "pchmn",
   "license": "MIT",
-  "homepage": "https://github.com/pchmn/vite-react-ts-template",
+  "homepage": "https://github.com/pchmn/vite-react-ts-ghactions-template",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
