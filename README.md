@@ -6,7 +6,7 @@
 <!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-template&amp;utm_campaign=Badge_Grade) -->
 
 # React TS Template with Vite
-
+  
 This a React + TS + Vite + Github Actions starter template.
 
 </div>
@@ -40,7 +40,7 @@ This a React + TS + Vite + Github Actions starter template.
 ### Github Actions
 
 - Build, Test and coverage analysis (with Codecov) at each commit
-- Deploy to github pages on main branch
+- Deploy to github pages on main branch (see deploy of this repo [here](https://pchmn.github.io/vite-react-ts-template/))
 
 
 ## Getting Started
@@ -80,4 +80,5 @@ Create a [Codecov](https://about.codecov.io/) token for your repo and add it as 
 - If you want to keep manual deployments, you need to create a [new environment with manual approve](https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/) in your repo, and then replace `environment` config in the `deploy` job in `.github/workflows/ci.yml`:
   - `environment.name` = name of the environment created in your repo
   - `environment.url` = link to your github pages
+
 
