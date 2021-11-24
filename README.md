@@ -51,7 +51,53 @@ This a React + TypeScript + Github Actions starter template built with Vite.
 npx degit pchmn/vite-react-ts-ghactions-template app_name
 ```
 
-### Configuration for Github Actions
+### Usage
+
+Project was built using `pnpm` but you can use `npm` or `yarn` (just don't forget to update Github Actions [workflow](https://github.com/pchmn/vite-react-ts-ghactions-template/blob/main/.github/workflows/ci.yml)).
+
+#### Install
+
+```
+pnpm i
+```
+
+#### Dev
+
+```
+pnpm dev
+```
+
+#### Build
+
+Normal build:
+```
+pnpm build
+```
+
+Build with `404.html` file for Github Pages included ([see more](#github-pages)):
+```
+pnpm build:ci
+```
+#### Test
+
+Without coverage:
+```
+pnpm test
+```
+
+With coverage:
+```
+pnpm test:ci
+```
+#### Serve
+
+> `pnpm build` (or `pnpm build:ci`) must have been launched before
+
+```
+pnpm serve
+```
+
+## Configuration for Github Actions
 
 If you want to use Github Actions in your repo, you'll need to make little configuration.
 
@@ -59,19 +105,19 @@ Actual [workflow](https://github.com/pchmn/vite-react-ts-ghactions-template/blob
 
 ![image](https://user-images.githubusercontent.com/12658241/142628675-1f9e9617-e5da-4dff-aa79-abc0883cf037.png)
 
-#### Build & Test job
+### Build & Test job
 
 > Build and test application on all commits
 
 Create a [Github personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (with `repo` and `workflow` permissions) and add it as a `PERSONAL_ACCESS_TOKEN` secret in your repo
 
-#### Coverage job
+### Coverage job
 
 > Run Codecov analysis on all commits
 
 Create a [Codecov](https://about.codecov.io/) token for your repo and add it as a `CODECOV_TOKEN` secret in your repo
 
-#### **Deploy** job
+### **Deploy** job
 
 > Manual deploy to Github Pages (only main branch)
 
@@ -80,5 +126,11 @@ Create a [Codecov](https://about.codecov.io/) token for your repo and add it as 
 - If you want to keep manual deployments, you need to create a [new environment with manual approve](https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/) in your repo, and then replace `environment` config in the `deploy` job in `.github/workflows/ci.yml`:
   - `environment.name` = name of the environment created in your repo
   - `environment.url` = link to your github pages
+
+## Github Pages
+
+There are modifications on `index.html`, and a new `404.html` file in the project to make it work well with Github Pages.
+
+> See https://github.com/rafgraph/spa-github-pages for more info.
 
 
