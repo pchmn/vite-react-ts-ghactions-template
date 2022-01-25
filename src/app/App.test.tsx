@@ -11,7 +11,7 @@ test('count is 0 at first', () => {
 test('increments count', () => {
   render(<App />);
 
-  fireEvent.click(screen.getByText('count is: 0'));
+  fireEvent.click(screen.getByRole('button'));
 
   expect(screen.getByText('count is: 1')).toBeDefined();
 });
