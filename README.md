@@ -17,28 +17,30 @@ This a React + TypeScript + Jest and React Testing Library + Github Actions star
 ## Features
 ### Overview
 
-- ⚡️ Vite
-- ⚛️ React 17 - TypeScript
-- 🧪 Jest + React Testing Library
-- 🚀 Github Actions with deployment on Github Pages
+- ⚡️&nbsp; [Vite](https://vitejs.dev/)
+- ⚛️&nbsp; [React](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- 🧪&nbsp; [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- 🚀&nbsp; [Github Actions](https://docs.github.com/en/actions) with deployment on [Github Pages](https://pages.github.com/)
 
 ### Coding Style
 
-- vscode settings & extension recommendations
-- `.editorconfig` file
-- Eslint & Prettier configured (with `eslint-plugin-prettier`)
+- VSCode settings & extensions recommendations
+- [EditorConfig](https://editorconfig.org/)
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) configured (with [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier))
 
 ### Git Hooks
 
-- Husky
-- Runs commitlint @ commit-msg
-- Runs eslint @ precommit
+- [Husky](https://typicode.github.io/husky/#/)
+  - [`commitlint`](https://commitlint.js.org/) @ `commit-msg`
+  - [`lint-staged`](https://github.com/okonet/lint-staged) @ `precommit`
 
 ### Github Actions
 
-- Build, Test and coverage analysis (with Codecov) at each commit
-- Deploy to Github Pages on main branch (see deployment of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
+- **Build**, **Test** and **Coverage Analysis** (with [Codecov](https://about.codecov.io/)) at each commit
+- **Deploy** to [Github Pages](https://pages.github.com/) on main branch (see deployment of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
 
+
+<br>
 
 ## Getting Started
 
@@ -50,49 +52,47 @@ npx degit pchmn/vite-react-ts-ghactions-template app_name
 
 ### Usage
 
-Project was built using [`pnpm`](https://pnpm.io/installation#using-npm). If you want to use `npm` or `yarn`, just don't forget to update Github Actions workflow (`.github/workflows/ci.yml`).
+> Project was built using [`pnpm`](https://pnpm.io/installation#using-npm). If you want to use `npm` or `yarn`, just don't forget to update Github Actions workflow (`.github/workflows/ci.yml`).
 
 #### Install
 
-```
+```sh
 pnpm i
 ```
 
 #### Dev
 
-```
+```sh
 pnpm dev
 ```
 
 #### Build
 
-Normal build:
-```
-pnpm build
-```
 
-Build with `404.html` file for Github Pages included ([see more](#github-pages)):
-```
+```sh
+# normal build
+pnpm build
+
+# build with 404.html file added for Github Pages included
 pnpm build:ci
 ```
+> See explanation of `404.html` file [here](#github-pages)
 #### Test
 
-Without coverage:
-```
+```sh
+# without coverage
 pnpm test
-```
 
-With coverage:
-```
+# with coverage
 pnpm test:ci
 ```
 #### Serve
 
-> `pnpm build` (or `pnpm build:ci`) must have been launched before
-
-```
+```sh
 pnpm serve
 ```
+
+<br>
 
 ## Configuration for Github Actions
 
