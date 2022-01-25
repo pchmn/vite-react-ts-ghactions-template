@@ -5,23 +5,28 @@
 [![codecov.io](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template/coverage.svg?branch=main)](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template?branch=master)
 <!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-ghactions-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-ghactions-template&amp;utm_campaign=Badge_Grade) -->
 
-# React - TypeScript and Github Actions Template with Vite
+<!-- # React - TypeScript and Github Actions Template with Vite -->
+# Vite, React and Github Actions
 
-This a React + TypeScript + Github Actions starter template built with Vite.
+This a React + TypeScript + Jest and React Testing Library + Github Actions starter template built with Vite.
+
+[Demo](https://pchmn.github.io/vite-react-ts-ghactions-template/)
 
 </div>
 
 ## Features
 ### Overview
 
-- Vite
-- React - TypeScript
-- pnpm
-- Gihtub Actions
-### Editor Config
+- ⚡️ Vite
+- ⚛️ React 17 - TypeScript
+- 🧪 Jest + React Testing Library
+- 🚀 Github Actions with deployment on Github Pages
+
+### Coding Style
 
 - vscode settings & extension recommendations
 - `.editorconfig` file
+- Eslint & Prettier configured (with `eslint-plugin-prettier`)
 
 ### Git Hooks
 
@@ -29,18 +34,10 @@ This a React + TypeScript + Github Actions starter template built with Vite.
 - Runs commitlint @ commit-msg
 - Runs eslint @ precommit
 
-### Lint and Formatting
-
-- Eslint & Prettier Configured (with `eslint-plugin-prettier`)
-
-### Testing
-
-- Jest + React Testing Library
-
 ### Github Actions
 
 - Build, Test and coverage analysis (with Codecov) at each commit
-- Deploy to github pages on main branch (see deploy of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
+- Deploy to Github Pages on main branch (see deployment of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
 
 
 ## Getting Started
@@ -53,7 +50,7 @@ npx degit pchmn/vite-react-ts-ghactions-template app_name
 
 ### Usage
 
-Project was built using `pnpm` but you can use `npm` or `yarn` (just don't forget to update Github Actions [workflow](https://github.com/pchmn/vite-react-ts-ghactions-template/blob/main/.github/workflows/ci.yml)).
+Project was built using [`pnpm`](https://pnpm.io/installation#using-npm). If you want to use `npm` or `yarn`, just don't forget to update Github Actions workflow (`.github/workflows/ci.yml`).
 
 #### Install
 
