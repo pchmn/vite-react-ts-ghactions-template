@@ -27,22 +27,22 @@
     "lint": "eslint --cache --fix ./src"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "@commitlint/prompt-cli": "^13.2.1",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^13.1.1",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "@vitejs/plugin-react": "^1.0.4",
+    "@vitejs/plugin-react": "^1.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^25.2.1",
@@ -56,8 +56,8 @@
     "lint-staged": "^11.2.3",
     "prettier": "2.4.1",
     "ts-jest": "^27.0.7",
-    "typescript": "^4.3.2",
-    "vite": "^2.6.13",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.2",
     "vite-tsconfig-paths": "^3.3.17"
   }
 }
