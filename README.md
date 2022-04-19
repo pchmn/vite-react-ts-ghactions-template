@@ -8,7 +8,7 @@
 <!-- # React - TypeScript and Github Actions Template with Vite -->
 # Vite, React and Github Actions
 
-This a React + TypeScript + Jest and React Testing Library + Github Actions starter template built with Vite.
+This a React v18 + TypeScript + Jest and React Testing Library + Github Actions starter template built with Vite.
 
 [Demo](https://pchmn.github.io/vite-react-ts-ghactions-template/)
 
@@ -18,7 +18,7 @@ This a React + TypeScript + Jest and React Testing Library + Github Actions star
 ### Overview
 
 - ⚡️&nbsp; [Vite](https://vitejs.dev/)
-- ⚛️&nbsp; [React](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- ⚛️&nbsp; [React v18](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
 - 🧪&nbsp; [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - 🚀&nbsp; [Github Actions](https://docs.github.com/en/actions) with deployment on [Github Pages](https://pages.github.com/)
 
@@ -129,5 +129,3 @@ Create a [Codecov](https://about.codecov.io/) token for your repo and add it as 
 There are modifications on `index.html`, and a new `404.html` file in the project to make it work well with Github Pages.
 
 > See https://github.com/rafgraph/spa-github-pages for more info.
-
-
