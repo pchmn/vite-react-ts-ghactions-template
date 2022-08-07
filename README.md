@@ -8,7 +8,7 @@
 <!-- # React - TypeScript and Github Actions Template with Vite -->
 # Vite, React and Github Actions
 
-This a React v18 + TypeScript + Jest and React Testing Library + Github Actions starter template built with Vite.
+This a React v18 + TypeScript + Vitest and React Testing Library + Github Actions starter template built with Vite.
 
 [Demo](https://pchmn.github.io/vite-react-ts-ghactions-template/)
 
@@ -19,7 +19,7 @@ This a React v18 + TypeScript + Jest and React Testing Library + Github Actions 
 
 - ⚡️&nbsp; [Vite](https://vitejs.dev/)
 - ⚛️&nbsp; [React v18](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
-- 🧪&nbsp; [Jest](https://jestjs.io/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- 🧪&nbsp; [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - 🚀&nbsp; [Github Actions](https://docs.github.com/en/actions) with deployment on [Github Pages](https://pages.github.com/)
 
 ### Coding Style
