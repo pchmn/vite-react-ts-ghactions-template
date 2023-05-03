@@ -5,7 +5,7 @@ import App from '@/App';
 test('count is 0 at first', () => {
   render(<App />);
 
-  expect(screen.getByText('count is: 0')).toBeDefined();
+  expect(screen.getByText('Count is: 0')).toBeDefined();
 });
 
 test('increments count', () => {
@@ -13,5 +13,5 @@ test('increments count', () => {
 
   fireEvent.click(screen.getByRole('button'));
 
-  expect(screen.getByText('count is: 1')).toBeDefined();
+  expect(screen.getByText('Count is: 1')).toBeDefined();
 });
