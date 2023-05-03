@@ -1,6 +1,8 @@
-import react from '@vitejs/plugin-react';
+/// <reference types="vitest" />
+
+import react from '@vitejs/plugin-react-swc';
+import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { defineConfig } from 'vitest/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +16,7 @@ export default defineConfig({
     environment: 'happy-dom',
     setupFiles: './src/setupTests.ts',
     coverage: {
+      provider: 'c8',
       reporter: ['html', 'lcov'],
     },
   },
