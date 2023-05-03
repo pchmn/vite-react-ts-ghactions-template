@@ -26,45 +26,36 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ env.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - name: 🏗 Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: "16"
+          version: 8
 
-      # pnpm cache
-      - uses: actions/cache@v2
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
+          node-version: 18
+          cache: pnpm
 
-      # Install
-      - name: INSTALL
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.22.2
-          run_install: true
+      - name: 🗂️ Install dependencies
+        run: pnpm i
 
-      # Build
-      - name: BUILD
+      - name: 🔨 Build
         run: pnpm build:ci
 
-      # Test
-      - name: TEST
+      - name: 🧪 Test
         run: pnpm test:ci
 
       # Upload dist artifacts
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: dist
           path: dist/
 
       # Upload coverage artifacts
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: coverage
           path: coverage/lcov.info
@@ -74,24 +65,17 @@ jobs:
     needs: buildAndTest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          token: ${{ env.GITHUB_TOKEN }}
-
-      # Donwload coverage artifacts
-      - uses: actions/download-artifact@v2
+      # Download coverage artifacts
+      - uses: actions/download-artifact@v3
         with:
           name: coverage
 
-      # Update coverage file to codecov
-      - name: CODECOV
-        uses: codecov/codecov-action@v1
+      - name: 📈 Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: lcov.info
 
-  # Deploy to gh pages
   deploy:
     name: Deploy
     # Deploy only for main branch
@@ -104,22 +88,13 @@ jobs:
       name: pchmn.github.io/vite-react-ts-ghactions-template
       url: https://pchmn.github.io/vite-react-ts-ghactions-template/
     steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ env.GITHUB_TOKEN }}
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
       # Download dist artifacts
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: dist
           path: dist/
 
-      # Deploy dist folder to gh pages
-      - name: DEPLOY
+      - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ env.GITHUB_TOKEN }}
