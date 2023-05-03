@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parser: '@typescript-eslint/parser',
   extends: [
@@ -11,21 +11,24 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
     'plugin:react/jsx-runtime',
-    'prettier'
+    'prettier',
   ],
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', 'unused-imports', 'simple-import-sort'],
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:testing-library/react']
-    }
+      extends: ['plugin:testing-library/react'],
+    },
   ],
   rules: {
-    'prettier/prettier': ['error']
-  }
+    'prettier/prettier': 'warn',
+    'unused-imports/no-unused-imports': 'warn',
+    'simple-import-sort/imports': 'warn',
+    'simple-import-sort/exports': 'warn',
+  },
 };
