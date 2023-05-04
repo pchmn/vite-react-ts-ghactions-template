@@ -5,10 +5,10 @@
 [![codecov.io](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template/coverage.svg?branch=main)](https://codecov.io/gh/pchmn/vite-react-ts-ghactions-template?branch=master)
 <!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4c695ce061c34c1bb1698acc19278f0e)](https://www.codacy.com/gh/pchmn/vite-react-ts-ghactions-template/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pchmn/vite-react-ts-ghactions-template&amp;utm_campaign=Badge_Grade) -->
 
-<!-- # React - TypeScript and Github Actions Template with Vite -->
-# Vite, React and Github Actions
+<!-- # React - TypeScript and GitHub Actions Template with Vite -->
+# Vite, React and GitHub Actions
 
-This a React v18 + TypeScript + Vitest and React Testing Library + Github Actions starter template built with Vite.
+This a React 18 + TypeScript + Vitest and React Testing Library + GitHub Actions starter template built with Vite.
 
 [Demo](https://pchmn.github.io/vite-react-ts-ghactions-template/)
 
@@ -17,10 +17,10 @@ This a React v18 + TypeScript + Vitest and React Testing Library + Github Action
 ## Features
 ### Overview
 
-- ⚡️&nbsp; [Vite](https://vitejs.dev/)
-- ⚛️&nbsp; [React v18](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- ⚡️&nbsp; [Vite 4](https://vitejs.dev/)
+- ⚛️&nbsp; [React 18](https://beta.reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
 - 🧪&nbsp; [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- 🚀&nbsp; [Github Actions](https://docs.github.com/en/actions) with deployment on [Github Pages](https://pages.github.com/)
+- 🚀&nbsp; [GitHub Actions](https://docs.github.com/en/actions) with deployment on [GitHub Pages](https://pages.github.com/)
 
 ### Coding Style
 
@@ -34,10 +34,10 @@ This a React v18 + TypeScript + Vitest and React Testing Library + Github Action
   - [`commitlint`](https://commitlint.js.org/) @ `commit-msg`
   - [`lint-staged`](https://github.com/okonet/lint-staged) @ `precommit`
 
-### Github Actions
+### GitHub Actions
 
 - **Build**, **Test** and **Coverage Analysis** (with [Codecov](https://about.codecov.io/)) at each commit
-- **Deploy** to [Github Pages](https://pages.github.com/) on main branch (see deployment of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
+- **Deploy** to [GitHub Pages](https://pages.github.com/) on main branch (see deployment of this repo [here](https://pchmn.github.io/vite-react-ts-ghactions-template/))
 
 
 <br>
@@ -52,7 +52,7 @@ npx degit pchmn/vite-react-ts-ghactions-template app_name
 
 ### Usage
 
-> Project was built using [`pnpm`](https://pnpm.io/installation#using-npm). If you want to use `npm` or `yarn`, just don't forget to update Github Actions workflow (`.github/workflows/ci.yml`).
+> Project was built using [`pnpm`](https://pnpm.io/installation#using-npm). If you want to use `npm` or `yarn`, just don't forget to update GitHub Actions workflow (`.github/workflows/ci.yml`).
 
 #### Install
 
@@ -73,7 +73,7 @@ pnpm dev
 # normal build
 pnpm build
 
-# build with 404.html file added for Github Pages included
+# build with 404.html file added for GitHub Pages
 pnpm build:ci
 ```
 > See explanation of `404.html` file [here](#github-pages)
@@ -94,38 +94,45 @@ pnpm serve
 
 <br>
 
-## Configuration for Github Actions
+## Configuration for GitHub Actions
 
-If you want to use Github Actions in your repo, you'll need to make little configuration.
+If you want to use GitHub Actions in your repo, you'll need to make little configuration.
 
 Actual [workflow](https://github.com/pchmn/vite-react-ts-ghactions-template/blob/main/.github/workflows/ci.yml) is:
 
-![image](https://user-images.githubusercontent.com/12658241/142628675-1f9e9617-e5da-4dff-aa79-abc0883cf037.png)
+![image](https://user-images.githubusercontent.com/12658241/236196559-854755f3-03aa-431d-af43-f7352b40f084.png)
 
-### Build & Test job
+### Build & Test
 
-> Build and test application on all commits
+> Run on any branch
 
-Create a [Github personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) (with `repo` and `workflow` permissions) and add it as a `PERSONAL_ACCESS_TOKEN` secret in your repo
+Build and test react app.
 
-### Coverage job
+### Coverage Analysis
 
-> Run Codecov analysis on all commits
+> Run on any branch
 
-Create a [Codecov](https://about.codecov.io/) token for your repo and add it as a `CODECOV_TOKEN` secret in your repo
+Run [Codecov](https://about.codecov.io/) analysis.
 
-### **Deploy** job
+**Configuration**: <br>
+[Create a Codecov token](https://docs.codecov.com/docs/quick-start#step-2-get-the-repository-upload-token) for your repo and add it as a `CODECOV_TOKEN` secret in your repo.
 
-> Manual deploy to Github Pages (only main branch)
+### Deploy
 
+> Run only on main branch (manual approve)
+
+Deploy react app to GitHub Pages.
+
+**Configuration**: <br>
 - Replace `base` config in `vite.config.ts` to match your repo name
-- Create `GIT_AUTHOR_NAME` and `GIT_AUTHOR_EMAIL` secrets in your repo (it will be the author of commits to `gh-pages` branch)
-- If you want to keep manual deployments, you need to create a [new environment with manual approve](https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/) in your repo, and then replace `environment` config in the `deploy` job in `.github/workflows/ci.yml`:
-  - `environment.name` = name of the environment created in your repo
-  - `environment.url` = link to your github pages
+- Manual approve
+  - If you want to keep it, you need to create a [new environment with manual approve](https://devblogs.microsoft.com/devops/i-need-manual-approvers-for-github-actions-and-i-got-them-now/) in your repo, and then replace `environment` config of `deploy` job in `.github/workflows/ci.yml`:
+    - `environment.name` = name of the environment created in your repo
+    - `environment.url` = link to your github pages
+  - If your want to remove it, just delete `environment` config of `deploy` job in `.github/workflows/ci.yml`
 
-## Github Pages
+## GitHub Pages
 
-There are modifications on `index.html`, and a new `404.html` file in the project to make it work well with Github Pages.
+There are modifications on `index.html`, and a new `404.html` file in the project to make it work well with GitHub Pages.
 
 > See https://github.com/rafgraph/spa-github-pages for more info.
